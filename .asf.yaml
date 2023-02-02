@@ -1,0 +1,10 @@
+# https://cwiki.apache.org/confluence/display/INFRA/.asf.yaml+features+for+git+repositories
+
+github:
+  enabled_merge_buttons:
+    squash:  true
+    merge:   false
+    rebase:  true
+
+  protected_branches:
+    main: { }
