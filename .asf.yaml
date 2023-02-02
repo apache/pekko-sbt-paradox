@@ -1,6 +1,17 @@
 # https://cwiki.apache.org/confluence/display/INFRA/.asf.yaml+features+for+git+repositories
 
 github:
+  description: "Theme and sbt-paradox settings used by Pekko projects"
+  homepage: https://pekko.apache.org/
+  labels:
+    - pekko
+    - pekko-sbt-paradox
+    - paradox
+    - sbt
+    - themes
+    - documentation
+    - markdown
+
   enabled_merge_buttons:
     squash:  true
     merge:   false
@@ -8,3 +19,9 @@ github:
 
   protected_branches:
     main: { }
+
+notifications:
+  commits:              commits@pekko.apache.org
+  issues:               notifications@pekko.apache.org
+  pullrequests:         notifications@pekko.apache.org
+  discussions:          notifications@pekko.apache.org
