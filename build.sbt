@@ -31,7 +31,15 @@ lazy val publishSettings = Seq(
 lazy val pekkoParadox = project
   .in(file("."))
   .settings(
-    publish / skip := true)
+    publish / skip := true,
+    initialize := {
+      val _ = initialize.value
+      import sun.util.logging.PlatformLogger
+      val logger = PlatformLogger.getLogger("sun.net.www.protocol.http.HttpURLConnection")
+      val oldLevel = logger.level()
+      println(s"Adjusting logging level from $oldLevel")
+      logger.setLevel(sun.util.logging.PlatformLogger.Level.FINEST)
+    })
   .aggregate(pekkoTheme, pekkoPlugin)
 
 lazy val pekkoTheme = project
