@@ -1,0 +1,28 @@
+name: Publish
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  sbt:
+    name: Publish to apache nexus
+    runs-on: ubuntu-20.04
+    if: github.repository == 'apache/incubator-pekko-sbt-paradox'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 100
+
+      - name: Set up JDK 8
+        uses: olafurpg/setup-scala@v13
+        with:
+          java-version: adopt@1.8
+
+      - name: Publish
+        run: |-
+          sbt publish
+        env:
+          NEXUS_USER: ${{ secrets.NEXUS_USER }}
+          NEXUS_PW: ${{ secrets.NEXUS_PW }}
