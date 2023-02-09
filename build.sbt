@@ -18,13 +18,13 @@ lazy val publishSettings = Seq(
   organizationHomepage := Some(url("https://www.apache.org")),
   sonatypeCredentialHost := apacheBaseRepo,
   sonatypeProfileName := "org.apache.pekko",
-  startYear := Some(2022),
+  startYear := Some(2023),
   developers := List(
     Developer(
-      "pekko-contributors",
-      "Apache Pekko Contributors",
+      "pekko-sbt-paradox-contributors",
+      "Apache Pekko Sbt Paradox Contributors",
       "dev@pekko.apache.org",
-      url("https://github.com/apache/incubator-pekko/graphs/contributors"))),
+      url("https://github.com/apache/incubator-pekko-sbt-paradox/graphs/contributors"))),
   publishMavenStyle := true,
   pomIncludeRepository := (_ => false))
 
