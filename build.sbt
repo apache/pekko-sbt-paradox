@@ -6,9 +6,17 @@ lazy val apacheBaseRepo = "repository.apache.org"
 
 def apacheNexusCredentials: Seq[Credentials] =
   (sys.env.get("NEXUS_USER"), sys.env.get("NEXUS_PW")) match {
-    case (Some(user), Some(password)) =>
+    case (Some(user), Some(password)) if user.nonEmpty && password.nonEmpty =>
       Seq(Credentials("Sonatype Nexus Repository Manager", apacheBaseRepo, user, password))
+    case (Some(user), Some(password)) =>
+      if (user == "")
+        println("NEXUS_USER is empty")
+      if (password == "")
+        println("NEXUS_PW is empty")
+
+      Seq.empty
     case _ =>
+      println("No Nexus credentials supplied")
       Seq.empty
   }
 
