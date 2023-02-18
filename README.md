@@ -46,7 +46,7 @@ For more settings refer to the [Paradox documentation](https://developer.lightbe
 
 ## Testing
 
-When you have made changes to akka-paradox, you can test it locally with:
+When you have made changes to pekko-sbt-paradox, you can test it locally with:
 
 ```
 sbt publishLocal sbtPlugin/scripted
