@@ -1,31 +1,9 @@
 scalaVersion := "2.13.10"
 
 licenses += "Apache-2.0" -> url("https://www.apache.org/licenses/LICENSE-2.0.html")
-
-lazy val apacheBaseRepo = "repository.apache.org"
-
-def apacheNexusCredentials: Seq[Credentials] =
-  (sys.env.get("NEXUS_USER"), sys.env.get("NEXUS_PW")) match {
-    case (Some(user), Some(password)) if user.nonEmpty && password.nonEmpty =>
-      Seq(Credentials("Sonatype Nexus Repository Manager", apacheBaseRepo, user, password))
-    case (Some(user), Some(password)) =>
-      if (user == "")
-        println("NEXUS_USER is empty")
-      if (password == "")
-        println("NEXUS_PW is empty")
-
-      Seq.empty
-    case _ =>
-      println("No Nexus credentials supplied")
-      Seq.empty
-  }
+ThisBuild / apacheSonatypeProjectProfile := "pekko"
 
 lazy val publishSettings = Seq(
-  credentials ++= apacheNexusCredentials,
-  organizationName := "Apache Software Foundation",
-  organizationHomepage := Some(url("https://www.apache.org")),
-  sonatypeCredentialHost := apacheBaseRepo,
-  sonatypeProfileName := "org.apache.pekko",
   startYear := Some(2023),
   developers := List(
     Developer(
@@ -33,8 +11,7 @@ lazy val publishSettings = Seq(
       "Apache Pekko Sbt Paradox Contributors",
       "dev@pekko.apache.org",
       url("https://github.com/apache/incubator-pekko-sbt-paradox/graphs/contributors"))),
-  publishMavenStyle := true,
-  pomIncludeRepository := (_ => false))
+  apacheSonatypeDisclaimerFile := Some((LocalRootProject / baseDirectory).value / "DISCLAIMER"))
 
 lazy val pekkoParadox = project
   .in(file("."))
