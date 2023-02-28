@@ -46,5 +46,11 @@ object PekkoParadoxPlugin extends AutoPlugin {
 
   def pekkoParadoxSettings(config: Configuration): Seq[Setting[_]] = pekkoParadoxGlobalSettings ++ inConfig(config)(Seq(
     paradoxTheme / managedSourceDirectories +=
-      (Assets / WebKeys.webJarsDirectory).value / (Assets / WebKeys.webModulesLib).value / "paradox-material-theme"))
+      (Assets / WebKeys.webJarsDirectory).value / (Assets / WebKeys.webModulesLib).value / "paradox-material-theme",
+    paradoxMaterialTheme / mappings := Def.taskDyn {
+      if (paradoxProperties.value.contains("material.search"))
+        Def.task(Seq(org.apache.pekko.SearchIndex.mapping(config).value))
+      else
+        Def.task(Seq.empty[(File, String)])
+    }.value))
 }

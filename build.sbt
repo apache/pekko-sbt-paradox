@@ -63,6 +63,8 @@ lazy val pekkoPlugin = project
       Seq("-Xmx1024M", "-Dplugin.version=" + version.value)
     },
     scriptedBufferLog := false,
+    libraryDependencies ++= Seq(
+      "io.spray" %% "spray-json" % "1.3.6"),
     addSbtPlugin(
       // When updating the sbt-paradox version,
       // remember to also update project/plugins.sbt
