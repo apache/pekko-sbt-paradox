@@ -23,7 +23,6 @@ lazy val pekkoTheme = project
   .in(file("theme"))
   .enablePlugins(ParadoxThemePlugin)
   .settings(
-    organization := "org.apache.pekko",
     name := "pekko-theme-paradox",
     libraryDependencies ++= Seq(
       "io.github.jonas" % "paradox-material-theme" % "0.6.0",
@@ -35,7 +34,6 @@ lazy val pekkoPlugin = project
   .enablePlugins(SbtPlugin)
   .settings(
     sbtPlugin := true,
-    organization := "org.apache.pekko",
     name := "pekko-sbt-paradox",
     scriptedLaunchOpts := {
       scriptedLaunchOpts.value ++
