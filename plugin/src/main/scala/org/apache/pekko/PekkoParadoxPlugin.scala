@@ -28,8 +28,6 @@ object PekkoParadoxPlugin extends AutoPlugin {
 
   def pekkoParadoxGlobalSettings: Seq[Setting[_]] = Seq(
     paradoxTheme := Some("org.apache.pekko" % "pekko-theme-paradox" % version),
-    paradoxNavigationDepth := 1,
-    paradoxNavigationExpandDepth := Some(1),
     paradoxNavigationIncludeHeaders := true,
     pekkoParadoxCopyright in Global :=
       """Copyright © 2022, 2023 <a href="https://apache.org">The Apache Software Foundation</a>, Licensed under the Apache License, Version 2.0.
