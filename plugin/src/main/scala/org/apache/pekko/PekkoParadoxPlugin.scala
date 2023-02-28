@@ -39,6 +39,7 @@ object PekkoParadoxPlugin extends AutoPlugin {
         .withLogo("assets/images/pekko_logo.png")
         .withFavicon("assets/images/pekko_favicon.png")
         .withCustomStylesheet("assets/stylesheets/pekko-theme.css")
+        .withColor("white", "orange")
         .withCopyright(pekkoParadoxCopyright.value)
         .withRepository(uri(pekkoParadoxGithub.value))
     })
