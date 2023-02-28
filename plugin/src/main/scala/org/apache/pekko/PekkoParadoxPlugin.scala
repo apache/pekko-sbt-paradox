@@ -40,6 +40,7 @@ object PekkoParadoxPlugin extends AutoPlugin {
       (Compile / paradoxMaterialTheme).value
         .withLogo("assets/images/pekko_logo.png")
         .withFavicon("assets/images/pekko_favicon.png")
+        .withCustomStylesheet("assets/stylesheets/pekko-theme.css")
         .withCopyright(pekkoParadoxCopyright.value)
         .withRepository(uri(pekkoParadoxGithub.value))
     })
@@ -52,5 +53,9 @@ object PekkoParadoxPlugin extends AutoPlugin {
         Def.task(Seq(org.apache.pekko.SearchIndex.mapping(config).value))
       else
         Def.task(Seq.empty[(File, String)])
-    }.value))
+    }.value,
+    // we override some files from paradox-material-theme, so we must solve the ambiguity where to take those duplicates from
+    paradoxTheme / WebKeys.deduplicators += { (files: Seq[File]) =>
+      files.find(_.getPath.contains("pekko-theme-paradox"))
+    }))
 }
