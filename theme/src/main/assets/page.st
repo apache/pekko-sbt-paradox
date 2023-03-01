@@ -1,5 +1,5 @@
 $!
-  Adopted from paradox-material-theme version 0.6.0 to include more scripts.
+  Adapted from paradox-material-theme version 0.6.0 to include more scripts.
 
   Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
   Copyright (c) 2017-2018 Jonas Fonseca <jonas.fonseca@gmail.com>
