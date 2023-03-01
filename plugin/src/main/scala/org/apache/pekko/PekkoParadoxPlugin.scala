@@ -13,7 +13,7 @@ object PekkoParadoxPlugin extends AutoPlugin {
 
   object autoImport {
     val pekkoParadoxCopyright = settingKey[String]("Copyright text to use in docs footer")
-    val pekkoParadoxGithub = settingKey[String]("Link to Github repository")
+    val pekkoParadoxGithub = settingKey[Option[String]]("Link to Github repository")
   }
   import autoImport._
 
@@ -34,14 +34,20 @@ object PekkoParadoxPlugin extends AutoPlugin {
         | This product contains significant parts that were originally based on software from Lightbend (<a href="https://akka.io/">Akka</a>).
         | Copyright (C) 2009-2022 Lightbend Inc. &lt;https://www.lightbend.com&gt; Apache Pekko is derived from Akka 2.6.x,
         | the last version that was distributed under the Apache License, Version 2.0 License.""".stripMargin,
+    pekkoParadoxGithub in Global := None,
     Compile / paradoxMaterialTheme := {
-      (Compile / paradoxMaterialTheme).value
-        .withLogo("assets/images/pekko_logo.png")
-        .withFavicon("assets/images/pekko_favicon.png")
-        .withCustomStylesheet("assets/stylesheets/pekko-theme.css")
-        .withColor("white", "orange")
-        .withCopyright(pekkoParadoxCopyright.value)
-        .withRepository(uri(pekkoParadoxGithub.value))
+      val theme =
+        (Compile / paradoxMaterialTheme).value
+          .withLogo("assets/images/pekko_logo.png")
+          .withFavicon("assets/images/pekko_favicon.png")
+          .withCustomStylesheet("assets/stylesheets/pekko-theme.css")
+          .withColor("white", "orange")
+          .withCopyright(pekkoParadoxCopyright.value)
+
+      pekkoParadoxGithub.value match {
+        case Some(githubUrl) => theme.withRepository(uri(githubUrl))
+        case None            => theme
+      }
     })
 
   def pekkoParadoxSettings(config: Configuration): Seq[Setting[_]] = pekkoParadoxGlobalSettings ++ inConfig(config)(Seq(
