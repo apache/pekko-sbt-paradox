@@ -11,7 +11,6 @@ project/plugins/project/
 .history
 .cache
 .lib/
-.idea/
 
 ### Scala template
 *.class
@@ -19,5 +18,3 @@ project/plugins/project/
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-
-.bsp/sbt.json
