@@ -30,10 +30,9 @@ object PekkoParadoxPlugin extends AutoPlugin {
     paradoxTheme := Some("org.apache.pekko" % "pekko-theme-paradox" % version),
     paradoxNavigationIncludeHeaders := true,
     pekkoParadoxCopyright in Global :=
-      """Copyright © 2022, 2023 <a href="https://apache.org">The Apache Software Foundation</a>, Licensed under the Apache License, Version 2.0.
-        | This product contains significant parts that were originally based on software from Lightbend (<a href="https://akka.io/">Akka</a>).
-        | Copyright (C) 2009-2022 Lightbend Inc. &lt;https://www.lightbend.com&gt; Apache Pekko is derived from Akka 2.6.x,
-        | the last version that was distributed under the Apache License, Version 2.0 License.""".stripMargin,
+      """Copyright © 2011-2022 <a href="https://www.lightbend.com/">Lightbend, Inc.</a>, © 2022, 2023
+        | <a href="https://apache.org">The Apache Software Foundation</a>, Licensed under the Apache License, Version 2.0.
+        | Apache Pekko, Pekko, and its feather logo are trademarks of The Apache Software Foundation.""".stripMargin,
     pekkoParadoxGithub in Global := None,
     Compile / paradoxMaterialTheme := {
       val theme =
