@@ -31,7 +31,7 @@ object PekkoParadoxPlugin extends AutoPlugin {
     paradoxNavigationIncludeHeaders := true,
     pekkoParadoxCopyright in Global :=
       """Copyright © 2011-2022 <a href="https://www.lightbend.com/">Lightbend, Inc.</a>, © 2022, 2023
-        | <a href="https://apache.org">The Apache Software Foundation</a>, Licensed under the Apache License, Version 2.0.
+        | <a href="https://apache.org">The Apache Software Foundation</a>.
         | Apache Pekko, Pekko, and its feather logo are trademarks of The Apache Software Foundation.""".stripMargin,
     pekkoParadoxGithub in Global := None,
     Compile / paradoxMaterialTheme := {
