@@ -29,11 +29,10 @@ object PekkoParadoxPlugin extends AutoPlugin {
   def pekkoParadoxGlobalSettings: Seq[Setting[_]] = Seq(
     paradoxTheme := Some("org.apache.pekko" % "pekko-theme-paradox" % version),
     paradoxNavigationIncludeHeaders := true,
-    pekkoParadoxCopyright in Global :=
-      """Copyright © 2011-2022 <a href="https://www.lightbend.com/">Lightbend, Inc.</a>, © 2022, 2023
-        | <a href="https://apache.org">The Apache Software Foundation</a>.
-        | Apache Pekko, Pekko, and its feather logo are trademarks of The Apache Software Foundation.""".stripMargin,
-    pekkoParadoxGithub in Global := None,
+    Global / pekkoParadoxCopyright :=
+      """Copyright © 2022, 2023 <a href="https://apache.org">The Apache Software Foundation</a>.
+        |Apache Pekko, Pekko, and its feather logo are trademarks of The Apache Software Foundation.""".stripMargin,
+    Global / pekkoParadoxGithub := None,
     Compile / paradoxMaterialTheme := {
       val theme =
         (Compile / paradoxMaterialTheme).value
