@@ -1,6 +1,7 @@
 scalaVersion := "2.13.10"
 
 ThisBuild / apacheSonatypeProjectProfile := "pekko"
+ThisBuild / dynverSonatypeSnapshots := true
 sourceDistName := "incubator-pekko-sbt-paradox"
 
 lazy val publishSettings = Seq(
