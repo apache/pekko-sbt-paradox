@@ -30,7 +30,7 @@ object PekkoParadoxPlugin extends AutoPlugin {
     paradoxTheme := Some("org.apache.pekko" % "pekko-theme-paradox" % version),
     paradoxNavigationIncludeHeaders := true,
     pekkoParadoxCopyright in Global :=
-      """Copyright © 2011-2022 <a href="https://www.lightbend.com/">Lightbend, Inc.</a>.
+      """Copyright © 2011-2022 <a href="https://www.lightbend.com/">Lightbend, Inc</a>.
         | Apache Pekko, Pekko, and its feather logo are trademarks of The Apache Software Foundation.""".stripMargin,
     pekkoParadoxGithub in Global := None,
     Compile / paradoxMaterialTheme := {

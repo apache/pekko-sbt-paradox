@@ -12,3 +12,12 @@ ul.md-nav__links li {
 ul.md-nav__links li a {
     display: inline;
 }
+
+#incubator__logo {
+    float: left;
+    margin-right:40px;
+    margin-top:0;
+    max-width:inherit;
+    padding:10px;
+    width:380px
+}
