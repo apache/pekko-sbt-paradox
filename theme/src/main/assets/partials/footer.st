@@ -61,6 +61,16 @@ $!
   $endif$
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
+      <div>
+        <a href="https://incubator.apache.org/" one-link-mark="yes">
+          <img src="assets/images/apache-incubator.svg" alt="Apache Incubator logo" id="incubator__logo">
+        </a>
+      </div>
+      <div>
+        <p style="font-family: Avenir-Medium;font-size: 14px;color: #999;line-height: 25px;">
+          Apache Pekko is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.
+        </p>
+      </div>
       <div class="md-footer-copyright">
         $ if (page.properties.("material.copyright")) $
           <div class="md-footer-copyright__highlight">
