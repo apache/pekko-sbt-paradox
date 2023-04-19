@@ -64,13 +64,6 @@ $!
     <link rel="stylesheet" href="$page.base$lib/material__tabs/dist/mdc.tabs.min.css">
     <link rel="stylesheet" href="$page.base$lib/prettify/prettify.css">
     <script src="$page.base$assets/javascripts/modernizr.1aa3b519.js"></script>
-    $ if (page.properties.("material.font.text")) $
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=$page.properties.("material.font.text.url")$:300,400,400i,700|$page.properties.("material.font.code.url")$">
-      <style>
-        body,input{font-family:"$page.properties.("material.font.text")$","Helvetica Neue",Helvetica,Arial,sans-serif}
-        code,kbd,pre{font-family:"$page.properties.("material.font.code")$","Courier New",Courier,monospace}
-      </style>
-    $ endif $
     <link rel="stylesheet" href="$page.base$assets/fonts/font-awesome.css">
     <link rel="stylesheet" href="$page.base$assets/fonts/material-icons.css">
     <link rel="stylesheet" href="$page.base$assets/stylesheets/paradox-material-theme.css">
@@ -163,9 +156,6 @@ $!
     </script>
     $ if (page.properties.("material.custom.javascript")) $
       <script src="$page.base$$page.properties.("material.custom.javascript")$"></script>
-    $ endif $
-    $ if (page.properties.("material.google.analytics")) $
-      $partials/integrations/analytics()$
     $ endif $
   </body>
 </html>
