@@ -207,3 +207,11 @@ which was released under an MIT license <https://github.com/jonas/paradox-materi
 
 Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
 Copyright (c) 2017-2018 Jonas Fonseca <jonas.fonseca@gmail.com>
+
+---------------
+
+pekko-sbt-paradox contains scripting adapted from Paradox <https://github.com/lightbend/paradox>
+which was released under the Apache License, Version 2.0.
+- theme/src/main/assets/assets/javascripts/groups.js
+
+Copyright © 2015 - 2019 Lightbend, Inc. <http://www.lightbend.com>
