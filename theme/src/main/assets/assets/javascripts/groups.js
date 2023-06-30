@@ -45,7 +45,7 @@ $(function() {
     return cookieAttr ? cookieAttr.split("=")[1] : "";
   }
 
-  $("dl").has("dt").each(function() {
+  $("dl").has("dt.mdc-tab").each(function() {
     var dl = $(this);
     dl.addClass("tabbed");
     var dts = dl.find("dt");
