@@ -1,6 +1,4 @@
 $!
-  Adapted from paradox-material-theme version 0.6.0
-
   Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
   Copyright (c) 2017-2018 Jonas Fonseca <jonas.fonseca@gmail.com>
 
@@ -22,6 +20,8 @@ $!
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
   IN THE SOFTWARE.
 !$
+<!-- Adapted from paradox-material-theme version 0.6.0 -->
+<!-- https://github.com/jonas/paradox-material-theme/blob/2d57fe0567ea9fe7e8de14faef4fa777841d505a/theme/src/main/assets/partials/footer.st -->
 <footer class="md-footer">
   $ if (page.next.html || page.prev.html) $
     <div class="md-footer-nav">
