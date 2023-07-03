@@ -1,9 +1,4 @@
-/**
- * Copied and adopted from https://github.com/jonas/paradox-material-theme/blob/2d57fe0567ea9fe7e8de14faef4fa777841d505a/plugin/src/main/scala/io.github.jonas.paradox.material.theme/SearchIndex.scala
- *
- * Copyright (c) 2017-2018 Jonas Fonseca
- * License: MIT
- */
+// Copied and adapted from https://github.com/jonas/paradox-material-theme/blob/2d57fe0567ea9fe7e8de14faef4fa777841d505a/plugin/src/main/scala/io.github.jonas.paradox.material.theme/SearchIndex.scala
 
 package org.apache.pekko
 
