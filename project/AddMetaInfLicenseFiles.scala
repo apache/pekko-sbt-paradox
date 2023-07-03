@@ -8,9 +8,9 @@
  */
 
 import org.mdedetrich.apache.sonatype.ApacheSonatypePlugin
-import org.mdedetrich.apache.sonatype.ApacheSonatypePlugin.autoImport.*
-import sbt.*
-import sbt.Keys.*
+import org.mdedetrich.apache.sonatype.ApacheSonatypePlugin.autoImport._
+import sbt._
+import sbt.Keys._
 
 /**
  * Copies LICENSE and NOTICE files into jar META-INF dir
