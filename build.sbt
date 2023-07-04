@@ -23,7 +23,7 @@ lazy val pekkoParadox = project
 
 lazy val pekkoTheme = project
   .in(file("theme"))
-  .enablePlugins(ParadoxThemePlugin)
+  .enablePlugins(ParadoxThemePlugin, ReproducibleBuildsPlugin)
   .settings(
     name := "pekko-theme-paradox",
     libraryDependencies ++= Seq(
@@ -33,7 +33,7 @@ lazy val pekkoTheme = project
 
 lazy val pekkoPlugin = project
   .in(file("plugin"))
-  .enablePlugins(SbtPlugin)
+  .enablePlugins(SbtPlugin, ReproducibleBuildsPlugin)
   .settings(
     sbtPlugin := true,
     name := "pekko-sbt-paradox",
