@@ -10,6 +10,8 @@ project/boot/
 project/plugins/project/
 .history
 .cache
+.bsp/
+.idea/
 .lib/
 
 ### Scala template
