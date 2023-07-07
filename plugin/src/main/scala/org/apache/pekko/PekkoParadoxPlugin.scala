@@ -20,9 +20,9 @@ package org.apache.pekko
 import com.lightbend.paradox.sbt.ParadoxPlugin
 import com.typesafe.sbt.web.Import.{ Assets, WebKeys }
 import io.github.jonas.paradox.material.theme.ParadoxMaterialThemePlugin
-import io.github.jonas.paradox.material.theme.ParadoxMaterialThemePlugin.autoImport.*
-import sbt.*
-import sbt.Keys.*
+import io.github.jonas.paradox.material.theme.ParadoxMaterialThemePlugin.autoImport._
+import sbt._
+import sbt.Keys._
 
 object PekkoParadoxPlugin extends AutoPlugin {
 
