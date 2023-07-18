@@ -33,6 +33,7 @@ ul.md-nav__links li a {
 }
 
 #incubator__logo {
+    background-color: white;
     float: left;
     margin-right:40px;
     margin-top:0;
