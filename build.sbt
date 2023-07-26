@@ -22,6 +22,12 @@ ThisBuild / dynverSonatypeSnapshots := true
 sourceDistName := "apache-pekko-sbt-paradox"
 sourceDistIncubating := true
 
+commands := commands.value.filterNot { command =>
+  command.nameOption.exists { name =>
+    name.contains("sonatypeRelease") || name.contains("sonatypeBundleRelease")
+  }
+}
+
 lazy val publishSettings = Seq(
   startYear := Some(2023),
   developers := List(
