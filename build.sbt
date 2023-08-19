@@ -15,6 +15,8 @@
  * limitations under the License.
  */
 
+import net.bzzt.reproduciblebuilds.ReproducibleBuildsPlugin.reproducibleBuildsCheckResolver
+
 scalaVersion := "2.13.11"
 
 ThisBuild / apacheSonatypeProjectProfile := "pekko"
@@ -27,6 +29,9 @@ commands := commands.value.filterNot { command =>
     name.contains("sonatypeRelease") || name.contains("sonatypeBundleRelease")
   }
 }
+
+ThisBuild / reproducibleBuildsCheckResolver :=
+  "Apache Pekko Staging".at("https://repository.apache.org/content/groups/staging/")
 
 lazy val publishSettings = Seq(
   startYear := Some(2023),
