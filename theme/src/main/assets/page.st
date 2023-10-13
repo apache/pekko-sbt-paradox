@@ -118,6 +118,13 @@ $!
                   </a>
                 </div>
               $ endif $
+              $ if (page.properties.("versioning.display")) $
+                <div class="print-only">
+                  <span class="md-source-file md-version">
+                    $page.properties.("project.version.short")$
+                  </span>
+                </div>
+              $ endif $
             </article>
           </div>
         </div>
