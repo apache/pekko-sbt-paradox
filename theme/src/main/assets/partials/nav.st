@@ -52,7 +52,7 @@ $!
 
   $extra_nav_links()$
 </nav>
-$ if (!page.properties.("disabled.versioning.display")) $
+$ if (!page.property_is.("disabled.versioning.display").("true")) $
   <ul style="display: none">
     <li class="md-nav__item md-version" id="project.version">
       <label class="md-nav__link" for="__version">
