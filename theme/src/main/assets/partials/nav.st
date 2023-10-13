@@ -52,10 +52,3 @@ $!
 
   $extra_nav_links()$
 </nav>
-<ul style="display: none">
-  <li class="md-nav__item md-version" id="project.version">
-    <label class="md-nav__link" for="__version">
-      <i class="md-icon" title="Version">label_outline</i> $page.properties.("project.version.short")$
-    </label>
-  </li>
-</ul>
