@@ -118,7 +118,7 @@ $!
                   </a>
                 </div>
               $ endif $
-              $ if (page.properties.("versioning.display")) $
+              $ if (!page.properties.("disabled.versioning.display")) $
                 <div class="print-only">
                   <span class="md-source-file md-version">
                     $page.properties.("project.version.short")$
