@@ -70,6 +70,9 @@ $!
     $ if (page.properties.("material.custom.stylesheet")) $
       <link rel="stylesheet" href="$page.base$$page.properties.("material.custom.stylesheet")$">
     $ endif $
+    $ if (page.properties.("material.custom.page-stylesheet")) $
+      <link rel="stylesheet" href="$page.base$$page.properties.("material.custom.page-stylesheet")$">
+    $ endif $
   </head>
   <body
     $ if (page.properties.("material.color.primary")) $
