@@ -54,21 +54,21 @@ $!
     $ else $
       <title>$page.home.title$</title>
     $ endif $
-    <link rel="stylesheet" href="$page.base$assets/stylesheets/application.451f80e5.css">
+    <link rel="stylesheet" href="$page.properties.("assets.hostname")$$page.base$assets/stylesheets/application.451f80e5.css">
     $ if (page.properties.("material.color.primary")) $
-      <link rel="stylesheet" href="$page.base$assets/stylesheets/application-palette.22915126.css">
+      <link rel="stylesheet" href="$page.properties.("assets.hostname")$$page.base$assets/stylesheets/application-palette.22915126.css">
       $ if (page.properties.("material.color.primary.theme")) $
-        <meta name="theme-color" content="$page.properties.("material.color.primary.theme")$" />
+        <meta name="theme-color" content="$page.properties.("assets.hostname")$$page.properties.("material.color.primary.theme")$" />
       $ endif $
     $ endif $
-    <link rel="stylesheet" href="$page.base$lib/material__tabs/dist/mdc.tabs.min.css">
-    <link rel="stylesheet" href="$page.base$lib/prettify/prettify.css">
-    <script src="$page.base$assets/javascripts/modernizr.1aa3b519.js"></script>
-    <link rel="stylesheet" href="$page.base$assets/fonts/font-awesome.css">
-    <link rel="stylesheet" href="$page.base$assets/fonts/material-icons.css">
-    <link rel="stylesheet" href="$page.base$assets/stylesheets/paradox-material-theme.css">
+    <link rel="stylesheet" href="$page.properties.("assets.hostname")$$page.base$lib/material__tabs/dist/mdc.tabs.min.css">
+    <link rel="stylesheet" href="$page.properties.("assets.hostname")$$page.base$lib/prettify/prettify.css">
+    <script src="$page.properties.("assets.hostname")$$page.base$assets/javascripts/modernizr.1aa3b519.js"></script>
+    <link rel="stylesheet" href="$page.properties.("assets.hostname")$$page.base$assets/fonts/font-awesome.css">
+    <link rel="stylesheet" href="$page.properties.("assets.hostname")$$page.base$assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="$page.properties.("assets.hostname")$$page.base$assets/stylesheets/paradox-material-theme.css">
     $ if (page.properties.("material.custom.stylesheet")) $
-      <link rel="stylesheet" href="$page.base$$page.properties.("material.custom.stylesheet")$">
+      <link rel="stylesheet" href="$page.properties.("assets.hostname")$$page.base$$page.properties.("material.custom.stylesheet")$">
     $ endif $
   </head>
   <body
@@ -131,8 +131,8 @@ $!
       </main>
       $partials/footer()$
     </div>
-    <script src="$page.base$assets/javascripts/application.583bbe55.js"></script>
-    <script src="$page.base$assets/javascripts/paradox-material-theme.js"></script>
+    <script src="$page.properties.("assets.hostname")$$page.base$assets/javascripts/application.583bbe55.js"></script>
+    <script src="$page.properties.("assets.hostname")$$page.base$assets/javascripts/paradox-material-theme.js"></script>
     $!
 
       The ending "." enables search to work without providing the site URL, since the
@@ -146,10 +146,10 @@ $!
 
     !$
     <script>app.initialize({version:"0.17",url:{base:"$page.base$."}})</script>
-    <script type="text/javascript" src="$page.base$lib/prettify/prettify.js"></script>
-    <script type="text/javascript" src="$page.base$lib/prettify/lang-scala.js"></script>
-    <script type="text/javascript" src="$page.base$lib/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="$page.base$assets/javascripts/groups.js"></script>
+    <script type="text/javascript" src="$page.properties.("assets.hostname")$$page.base$lib/prettify/prettify.js"></script>
+    <script type="text/javascript" src="$page.properties.("assets.hostname")$$page.base$lib/prettify/lang-scala.js"></script>
+    <script type="text/javascript" src="$page.properties.("assets.hostname")$$page.base$lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="$page.properties.("assets.hostname")$$page.base$assets/javascripts/groups.js"></script>
 
     <script type="text/javascript">
       document.addEventListener("DOMContentLoaded", function(event) {
