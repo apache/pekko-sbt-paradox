@@ -45,6 +45,8 @@ object PekkoParadoxPlugin extends AutoPlugin {
 
   def pekkoParadoxGlobalSettings: Seq[Setting[_]] = Seq(
     paradoxTheme := Some("org.apache.pekko" % "pekko-theme-paradox" % version),
+    // Target hostname for static assets (CSS, JS, Icons, Font)
+    paradoxProperties ++= Map("assets.hostname" -> "https://pekko.apache.org/"),
     paradoxNavigationIncludeHeaders := true,
     pekkoParadoxCopyright in Global :=
       """Copyright © 2011-2022 <a href="https://www.lightbend.com/">Lightbend, Inc</a>.

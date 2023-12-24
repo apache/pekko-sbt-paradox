@@ -63,7 +63,7 @@ $!
     <div class="md-footer-meta__inner md-grid">
       <div class="logo">
         <a href="https://incubator.apache.org/" one-link-mark="yes">
-          <img src="assets/images/apache-incubator.svg" alt="Apache Incubator logo" id="incubator__logo">
+          <img src="$page.properties.("assets.hostname")$assets/images/apache-incubator.svg" alt="Apache Incubator logo" id="incubator__logo">
         </a>
       </div>
       <div class="incubation-disclaimer">
