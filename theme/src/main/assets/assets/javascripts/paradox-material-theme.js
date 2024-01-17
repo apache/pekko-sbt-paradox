@@ -217,6 +217,26 @@ function initParadoxMaterialTheme() {
         dl.parentNode.appendChild(contentContainer)
     }
   })
-}
+
+  // index toc
+  document.querySelectorAll('.toc').forEach(tocRoot => {
+
+    function findHeaderElements(element) {
+      var headerElements = element.getElementsByClassName('header');
+      for (var i = 0; i < headerElements.length; i++) {
+        // TODO can we read $page.group on here?
+        if (headerElements[i].classList.contains('group-java')) {
+          console.log(headerElements[i].textContent);
+          headerElements[i].parentNode.remove();
+        }
+      }
+      var childElements = element.children;
+      for (var j = 0; j < childElements.length; j++) {
+        findHeaderElements(childElements[j]);
+      }
+    }
+
+    findHeaderElements(tocRoot);
+   })
 
 initParadoxMaterialTheme()
