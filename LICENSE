@@ -230,11 +230,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 IN THE SOFTWARE.
-
----------------
-
-pekko-sbt-paradox contains scripting adapted from Paradox <https://github.com/lightbend/paradox>
-which was released under the Apache License, Version 2.0.
-- theme/src/main/assets/assets/javascripts/groups.js
-
-Copyright © 2015 - 2019 Lightbend, Inc. <http://www.lightbend.com>
