@@ -152,13 +152,9 @@ $(function() {
      $(".toc").each(function() {
       var tocRoot = $(this);
       function findHeaderElements(element) {
-        var headerElements = element.find(".header");
+        var headerElements = element.find(".header").filter("a");
         headerElements.each(function() {
           var headerElement = $(this);
-          // only work with the header link
-          if (!headerElement.is("a")) {
-            return false;
-          }
           // if header hiding by group switch, hide they li parent
           // otherwise display there li parent
           if (headerElement.css("display") === "none" ) {
@@ -181,7 +177,7 @@ $(function() {
       }
 
       findHeaderElements(tocRoot);
-   })
+    })
 
     groupChangeListeners.forEach(listener => listener(group, supergroup, catalog));
   }
