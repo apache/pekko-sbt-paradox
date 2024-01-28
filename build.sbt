@@ -75,9 +75,9 @@ lazy val pekkoPlugin = project
     addSbtPlugin(
       // When updating the sbt-paradox version,
       // remember to also update project/plugins.sbt
-      "com.lightbend.paradox" % "sbt-paradox" % "0.10.3"),
-    addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-apidoc" % "1.0.0"),
-    addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-project-info" % "3.0.0"),
+      "com.lightbend.paradox" % "sbt-paradox" % "0.10.6"),
+    addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-apidoc" % "1.1.0"),
+    addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-project-info" % "3.0.1"),
     addSbtPlugin("io.github.jonas" % "sbt-paradox-material-theme" % "0.6.0"),
     Compile / resourceGenerators += Def.task {
       val file = (Compile / resourceManaged).value / "pekko-paradox.properties"
