@@ -70,12 +70,6 @@ object PekkoParadoxPlugin extends AutoPlugin {
   def pekkoParadoxSettings(config: Configuration): Seq[Setting[_]] = pekkoParadoxGlobalSettings ++ inConfig(config)(Seq(
     paradoxTheme / managedSourceDirectories +=
       (Assets / WebKeys.webJarsDirectory).value / (Assets / WebKeys.webModulesLib).value / "paradox-material-theme",
-    paradoxMaterialTheme / mappings := Def.taskDyn {
-      if (paradoxProperties.value.contains("material.search"))
-        Def.task(Seq(org.apache.pekko.SearchIndex.mapping(config).value))
-      else
-        Def.task(Seq.empty[(File, String)])
-    }.value,
     // we override some files from paradox-material-theme, so we must solve the ambiguity where to take those duplicates from
     paradoxTheme / WebKeys.deduplicators += { (files: Seq[File]) =>
       files.find(_.getPath.contains("pekko-theme-paradox"))
