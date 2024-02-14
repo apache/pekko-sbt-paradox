@@ -104,3 +104,10 @@ ThisBuild / githubWorkflowOSes := Seq("ubuntu-latest", "macos-latest", "windows-
 
 ThisBuild / githubWorkflowJavaVersions := Seq(
   JavaSpec.temurin("8"))
+
+ThisBuild / scalacOptions ++= List(
+  "-unchecked",
+  "-deprecation",
+  "-language:_",
+  "-encoding",
+  "UTF-8")
