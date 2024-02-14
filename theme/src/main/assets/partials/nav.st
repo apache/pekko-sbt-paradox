@@ -20,8 +20,8 @@ $!
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
   IN THE SOFTWARE.
 !$
-<!-- Adapted from paradox-material-theme version 0.6.0 -->
-<!-- https://github.com/jonas/paradox-material-theme/blob/2d57fe0567ea9fe7e8de14faef4fa777841d505a/theme/src/main/assets/partials/nav.st -->
+<!-- Adapted from sbt-paradox-material-theme version 0.6.0 -->
+<!-- https://github.com/sbt/sbt-paradox-material-theme/blob/2d57fe0567ea9fe7e8de14faef4fa777841d505a/theme/src/main/assets/partials/nav.st -->
 <nav class="md-nav md-nav--primary" data-md-level="0" style="visibility: hidden">
   <label class="md-nav__title md-nav__title--site" for="drawer">
     <a href="$page.home.href$" title="$page.home.title$" class="md-nav__button md-logo">
