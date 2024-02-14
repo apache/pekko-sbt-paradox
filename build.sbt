@@ -84,3 +84,16 @@ lazy val pekkoPlugin = project
       IO.write(file, s"pekko.paradox.version=${version.value}")
       Seq(file)
     }).settings(publishSettings)
+
+ThisBuild / githubWorkflowBuild := Seq(WorkflowStep.Sbt(List("test", "scripted")))
+
+ThisBuild / githubWorkflowTargetTags ++= Seq("v*")
+ThisBuild / githubWorkflowPublishTargetBranches := Seq()
+ThisBuild / githubWorkflowPublish := Seq()
+
+ThisBuild / githubWorkflowOSes := Seq("ubuntu-latest", "macos-latest", "windows-latest")
+
+ThisBuild / githubWorkflowJavaVersions := Seq(
+  JavaSpec.temurin("11"),
+  JavaSpec.temurin("17"),
+  JavaSpec.temurin("21"))
