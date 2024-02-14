@@ -17,7 +17,10 @@
 
 import net.bzzt.reproduciblebuilds.ReproducibleBuildsPlugin.reproducibleBuildsCheckResolver
 
-scalaVersion := "2.13.11"
+val scala212 = "2.12.18"
+
+ThisBuild / scalaVersion := scala212
+ThisBuild / crossScalaVersions := Seq(scala212)
 
 ThisBuild / apacheSonatypeProjectProfile := "pekko"
 ThisBuild / dynverSonatypeSnapshots := true
@@ -88,12 +91,18 @@ lazy val pekkoPlugin = project
 ThisBuild / githubWorkflowBuild := Seq(WorkflowStep.Sbt(List("test", "scripted")))
 
 ThisBuild / githubWorkflowTargetTags ++= Seq("v*")
-ThisBuild / githubWorkflowPublishTargetBranches := Seq()
-ThisBuild / githubWorkflowPublish := Seq()
+ThisBuild / githubWorkflowPublishTargetBranches := Seq(
+  RefPredicate.Equals(Ref.Branch("main")))
+
+ThisBuild / githubWorkflowPublish := Seq(
+  WorkflowStep.Sbt(
+    commands = List("publish"),
+    name = Some("Publish project"),
+    env = Map(
+      "NEXUS_USER" -> "${{ secrets.NEXUS_USER }}",
+      "NEXUS_PW" -> "${{ secrets.NEXUS_PW }}")))
 
 ThisBuild / githubWorkflowOSes := Seq("ubuntu-latest", "macos-latest", "windows-latest")
 
 ThisBuild / githubWorkflowJavaVersions := Seq(
-  JavaSpec.temurin("11"),
-  JavaSpec.temurin("17"),
-  JavaSpec.temurin("21"))
+  JavaSpec.temurin("8"))
