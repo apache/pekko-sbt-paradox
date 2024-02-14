@@ -19,8 +19,8 @@ package org.apache.pekko
 
 import com.lightbend.paradox.sbt.ParadoxPlugin
 import com.typesafe.sbt.web.Import.{ Assets, WebKeys }
-import io.github.jonas.paradox.material.theme.ParadoxMaterialThemePlugin
-import io.github.jonas.paradox.material.theme.ParadoxMaterialThemePlugin.autoImport._
+import com.github.sbt.paradox.material.theme.ParadoxMaterialThemePlugin
+import com.github.sbt.paradox.material.theme.ParadoxMaterialThemePlugin.autoImport._
 import sbt._
 import sbt.Keys._
 

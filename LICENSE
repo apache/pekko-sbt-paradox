@@ -202,8 +202,8 @@
 
 ---------------
 
-pekko-sbt-paradox contains scripting adapted from paradox-material-theme version 0.6.0,
-which was released under an MIT license <https://github.com/jonas/paradox-material-theme>.
+pekko-sbt-paradox contains scripting adapted from sbt-paradox-material-theme version 0.6.0,
+which was released under an MIT license <https://github.com/sbt/sbt-paradox-material-theme>.
 - plugin/src/main/scala/org/apache/pekko/SearchIndex.scala
 - theme/src/main/assets/page.st
 - theme/src/main/assets/assets/javascripts/paradox-material-theme.js

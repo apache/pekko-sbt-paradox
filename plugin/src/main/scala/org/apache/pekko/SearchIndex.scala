@@ -1,4 +1,4 @@
-// Copied and adapted from https://github.com/jonas/paradox-material-theme/blob/2d57fe0567ea9fe7e8de14faef4fa777841d505a/plugin/src/main/scala/io.github.jonas.paradox.material.theme/SearchIndex.scala
+// Copied and adapted from https://github.com/sbt/sbt-paradox-material-theme/blob/2d57fe0567ea9fe7e8de14faef4fa777841d505a/plugin/src/main/scala/io.github.jonas.paradox.material.theme/SearchIndex.scala
 
 package org.apache.pekko
 

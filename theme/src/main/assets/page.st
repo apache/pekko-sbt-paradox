@@ -20,8 +20,8 @@ $!
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
   IN THE SOFTWARE.
 !$
-<!-- Adapted from paradox-material-theme version 0.6.0 -->
-<!-- https://github.com/jonas/paradox-material-theme/blob/2d57fe0567ea9fe7e8de14faef4fa777841d505a/theme/src/main/assets/page.st -->
+<!-- Adapted from sbt-paradox-material-theme version 0.6.0 -->
+<!-- https://github.com/sbt/sbt-paradox-material-theme/blob/2d57fe0567ea9fe7e8de14faef4fa777841d505a/theme/src/main/assets/page.st -->
 <!DOCTYPE html>
 <html lang="$page.properties.("material.language"); null="en"$" class="no-js">
   <head>
