@@ -59,7 +59,7 @@ lazy val pekkoTheme = project
     name := "pekko-theme-paradox",
     libraryDependencies ++= Seq(
       "com.github.sbt" % "paradox-material-theme" % "0.7.0",
-      "org.webjars" % "foundation" % "6.2.4" % "provided"))
+      "org.webjars" % "foundation" % "6.4.3-1" % "provided"))
   .settings(publishSettings)
 
 lazy val pekkoPlugin = project
@@ -78,7 +78,7 @@ lazy val pekkoPlugin = project
       // remember to also update project/plugins.sbt
       "com.lightbend.paradox" % "sbt-paradox" % "0.10.3"),
     addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-apidoc" % "1.1.0"),
-    addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-project-info" % "3.0.0"),
+    addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-project-info" % "3.0.1"),
     addSbtPlugin("com.github.sbt" % "sbt-paradox-material-theme" % "0.7.0"),
     Compile / resourceGenerators += Def.task {
       val file = (Compile / resourceManaged).value / "pekko-paradox.properties"
