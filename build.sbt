@@ -59,7 +59,7 @@ lazy val pekkoTheme = project
     name := "pekko-theme-paradox",
     libraryDependencies ++= Seq(
       "com.github.sbt" % "paradox-material-theme" % "0.7.0",
-      "org.webjars" % "foundation" % "6.2.4" % "provided"))
+      "org.webjars" % "foundation" % "6.4.3-1" % "provided"))
   .settings(publishSettings)
 
 lazy val pekkoPlugin = project
