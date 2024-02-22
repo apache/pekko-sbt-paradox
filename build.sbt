@@ -111,3 +111,30 @@ ThisBuild / scalacOptions ++= List(
   "-language:_",
   "-encoding",
   "UTF-8")
+
+// We don't want to depend on sbt-pekko-build since this project
+// is not a pekko module, i.e. its just a common theme for document
+// generation so the settings should match
+// https://github.com/pjfanning/sbt-pekko-build/blob/main/src/main/scala/com/github/pjfanning/pekkobuild/PekkoInlinePlugin.scala#L27-L30
+
+lazy val pekkoInlineEnabled: SettingKey[Boolean] = settingKey(
+  "Whether to enable the Scala 2 inliner Defaults to pekko.no.inline property")
+
+pekkoInlineEnabled := {
+  val prop = "pekko.no.inline"
+  val enabled = !sys.props.contains(prop)
+  val log = sLog.value
+  if (enabled)
+    log.info(s"Scala 2 optimizer/inliner enabled, to disable set the $prop system property")
+  else
+    log.info(s"Scala 2 optimizer/inliner disabled, to enable remove the $prop system property")
+  enabled
+}
+
+ThisBuild / scalacOptions ++= {
+  if (pekkoInlineEnabled.value) {
+    List(
+      "-opt-inline-from:<sources>",
+      "-opt:l:inline")
+  } else List.empty
+}
