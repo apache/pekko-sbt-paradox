@@ -76,7 +76,8 @@ lazy val pekkoPlugin = project
     addSbtPlugin(
       // When updating the sbt-paradox version,
       // remember to also update project/plugins.sbt
-      "com.lightbend.paradox" % "sbt-paradox" % "0.10.3"),
+      ("com.lightbend.paradox" % "sbt-paradox" % "0.10.3").exclude("com.typesafe.sbt", "sbt-web")),
+    addSbtPlugin("com.github.sbt" % "sbt-web" % "1.5.4"), // sbt-paradox < 10.depends on old sbt-web 1.4.x, but we want a newer version
     addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-apidoc" % "1.1.0"),
     addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-project-info" % "3.0.1"),
     addSbtPlugin("com.github.sbt" % "sbt-paradox-material-theme" % "0.7.0"),
