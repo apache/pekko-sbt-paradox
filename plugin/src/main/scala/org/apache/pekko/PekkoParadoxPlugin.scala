@@ -29,9 +29,9 @@ object PekkoParadoxPlugin extends AutoPlugin {
   import ParadoxPlugin.autoImport._
 
   object autoImport {
-    val pekkoParadoxCopyright = settingKey[String]("Copyright text to use in docs footer")
-    val pekkoParadoxGithub = settingKey[Option[String]]("Link to Github repository")
-    val pekkoParadoxIncubatorNotice = settingKey[Option[String]]("Whether to include the ASF incubator notice")
+    lazy val pekkoParadoxCopyright = settingKey[String]("Copyright text to use in docs footer")
+    lazy val pekkoParadoxGithub = settingKey[Option[String]]("Link to Github repository")
+    lazy val pekkoParadoxIncubatorNotice = settingKey[Option[String]]("Whether to include the ASF incubator notice")
   }
   import autoImport._
 
