@@ -31,10 +31,14 @@ object PekkoParadoxPlugin extends AutoPlugin {
   object autoImport {
     val pekkoParadoxCopyright = settingKey[String]("Copyright text to use in docs footer")
     val pekkoParadoxGithub = settingKey[Option[String]]("Link to Github repository")
+    val pekkoParadoxIncubatorNotice = settingKey[Option[String]]("Whether to include the ASF incubator notice")
   }
   import autoImport._
 
   val version = ParadoxPlugin.readProperty("pekko-paradox.properties", "pekko.paradox.version")
+
+  val incubatorNoticeText =
+    "Apache Pekko is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF."
 
   override def requires = ParadoxPlugin
 
@@ -46,12 +50,17 @@ object PekkoParadoxPlugin extends AutoPlugin {
   def pekkoParadoxGlobalSettings: Seq[Setting[_]] = Seq(
     paradoxTheme := Some("org.apache.pekko" % "pekko-theme-paradox" % version),
     // Target hostname for static assets (CSS, JS, Icons, Font)
-    paradoxProperties ++= Map("assets.hostname" -> "https://pekko.apache.org/"),
+    paradoxProperties ++= {
+      Map("assets.hostname" -> "https://pekko.apache.org/") ++
+      pekkoParadoxIncubatorNotice.value.map(incubatorNotice => Map("incubator.notice" -> incubatorNotice)).getOrElse(
+        Map.empty)
+    },
     paradoxNavigationIncludeHeaders := true,
     pekkoParadoxCopyright in Global :=
       """Copyright © 2011-2022 <a href="https://www.lightbend.com/">Lightbend, Inc</a>.
         | Apache Pekko, Pekko, and its feather logo are trademarks of The Apache Software Foundation.""".stripMargin,
     pekkoParadoxGithub in Global := None,
+    pekkoParadoxIncubatorNotice in Global := Some(incubatorNoticeText),
     Compile / paradoxMaterialTheme := {
       val theme =
         (Compile / paradoxMaterialTheme).value
