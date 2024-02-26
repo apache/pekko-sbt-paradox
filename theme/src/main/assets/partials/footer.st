@@ -61,16 +61,18 @@ $!
   $endif$
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="logo">
-        <a href="https://incubator.apache.org/" one-link-mark="yes">
-          <img src="$page.properties.("assets.hostname")$assets/images/apache-incubator.svg" alt="Apache Incubator logo" id="incubator__logo">
-        </a>
-      </div>
-      <div class="incubation-disclaimer">
-        <p>
-          Apache Pekko is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.
-        </p>
-      </div>
+      $ if (page.properties.("incubator.notice")) $
+        <div class="logo">
+          <a href="https://incubator.apache.org/" one-link-mark="yes">
+            <img src="$page.properties.("assets.hostname")$assets/images/apache-incubator.svg" alt="Apache Incubator logo" id="incubator__logo">
+          </a>
+        </div>
+        <div class="incubation-disclaimer">
+          <p>
+            $page.properties.("incubator.notice")$
+          </p>
+        </div>
+      $ endif $
       <div class="md-footer-copyright">
         $ if (page.properties.("material.copyright")) $
           <div class="md-footer-copyright__highlight">
