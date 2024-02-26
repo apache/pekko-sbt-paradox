@@ -26,28 +26,25 @@ umbrella of projects, and not as a public theme to use on "any" project.
 
 ## Usage
 
-Use the sbt plugin for Pekko Paradox:
+### JDK 1.8 (only)
+
+The project intentionally supports JDK 1.8 by default since its built against
+[sbt-paradox/sbt-paradox-theme 0.9.2](https://github.com/apache/incubator-pekko-sbt-paradox/blob/main/project/plugins.sbt#L20-L21)
+so you can just include it like this
+
 ```sbt
-addSbtPlugin("org.apache.pekko" % "pekko-sbt-paradox" % "<version>")
+addSbtPlugin("org.apache.pekko" % "sbt-paradox-pekko" % "<version>")
 ```
 
-### Usage within JDK 1.8 projects
+### JDK 11+
 
-Due to the design of certain transitive dependencies used by sbt-paradox such as parboiled, this plugin won't
-work correctly if run under JDK 1.8
-
-You can work around this by hotpatching the resolved dependencies, rather than doing the simple `addSbtPlugin`
-as mentioned before do the following
+With JDK 11 or later you need to explicitly override the sbt-paradox/sbt-paradox-theme
+versions to use the 10.6.x (or newer) series, i.e.
 
 ```sbt
-addSbtPlugin("org.apache.pekko" % "sbt-paradox-pekko" % "<version>" excludeAll(
-  "com.lightbend.paradox" % "sbt-paradox",
-  "com.lightbend.paradox" % "sbt-paradox-apidoc",
-  "com.lightbend.paradox" % "sbt-paradox-project-info"
-))
-addSbtPlugin("com.lightbend.paradox" % "sbt-paradox" % "0.9.2" force())
-addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-apidoc" % "0.10.1" force())
-addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-project-info" % "2.0.0" force())
+addSbtPlugin("org.apache.pekko" % "sbt-paradox-pekko" % "<version>")
+addSbtPlugin("com.lightbend.paradox" % "sbt-paradox" % "0.10.6")
+addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-theme" % "0.10.6")
 ```
 
 Enable it instead of the upstream ParadoxPlugin:
