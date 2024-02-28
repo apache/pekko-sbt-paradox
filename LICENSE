@@ -209,6 +209,7 @@ which was released under an MIT license <https://github.com/sbt/sbt-paradox-mate
 - theme/src/main/assets/assets/javascripts/paradox-material-theme.js
 - theme/src/main/assets/partials/footer.st
 - theme/src/main/assets/partials/nav.st
+- theme/src/main/assets/partials/source.st
 
 Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
 Copyright (c) 2017-2018 Jonas Fonseca <jonas.fonseca@gmail.com>
