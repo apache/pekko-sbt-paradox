@@ -32,7 +32,7 @@ $!
         $ if (page.properties.("material.logo.uri")) $
           <img src="$page.properties.("assets.hostname")$$page.base$$page.properties.("material.logo.uri")$" width="24" height="24">
         $ else $
-          <img src="$page.base$$page.properties.("material.logo")$" width="24" height="24">
+          <img src="$page.properties.("assets.hostname")$$page.base$$page.properties.("material.logo")$" width="24" height="24">
         $endif$
       $endif$
     </a>
