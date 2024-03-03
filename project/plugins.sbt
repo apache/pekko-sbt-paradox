@@ -23,6 +23,6 @@ addSbtPlugin("com.github.sbt" % "sbt-web" % "1.5.4") // sbt-paradox[-theme] 0.9.
 addSbtPlugin("com.github.sbt" % "sbt-dynver" % "5.0.1")
 addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.5.2")
 addSbtPlugin("org.mdedetrich" % "sbt-apache-sonatype" % "0.1.11")
-addSbtPlugin("com.github.pjfanning" % "sbt-source-dist" % "0.1.11")
+addSbtPlugin("com.github.pjfanning" % "sbt-source-dist" % "0.1.12")
 addSbtPlugin("net.bzzt" % "sbt-reproducible-builds" % "0.32")
 addSbtPlugin("com.github.sbt" % "sbt-github-actions" % "0.23.0")
