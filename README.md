@@ -36,6 +36,18 @@ so you can just include it like this
 addSbtPlugin("org.apache.pekko" % "sbt-paradox-pekko" % "<version>")
 ```
 
+> **_NOTE:_** If you happen to be using sbt-paradox plugins aside from
+> * sbt-web
+> * sbt-paradox-apidoc
+> * sbt-paradox-project-info
+> you need to use an `excludesAll` statement on `addSbtPlugin` to remove the
+> JDK 11 reference, i.e. if you need to use sbt-site-paradox you would do the
+> following
+> ```sbt
+> addSbtPlugin(("com.github.sbt" % "sbt-site-paradox" % "1.5.0").excludeAll(
+> "com.lightbend.paradox", "sbt-paradox"))
+> ```
+
 ### JDK 11+
 
 With JDK 11 or later you need to explicitly override the sbt-paradox/sbt-paradox-theme
