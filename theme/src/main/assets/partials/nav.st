@@ -27,12 +27,12 @@ $!
     <a href="$page.home.href$" title="$page.home.title$" class="md-nav__button md-logo">
     <span class="md-nav__button md-logo">
       $ if (page.properties.("material.logo.icon")) $
-        <i class="md-icon">$page.properties.("material.logo.icon")$</i>
+        <i class="md-icon">$page.properties.("assets.hostname")$$page.properties.("material.logo.icon")$</i>
       $ else $
         $ if (page.properties.("material.logo.uri")) $
-          <img src="$page.properties.("material.logo.uri")$" width="24" height="24">
+          <img src="$page.properties.("assets.hostname")$$page.properties.("material.logo.uri")$" width="24" height="24">
         $ else $
-          <img src="$page.base$$page.properties.("material.logo")$" width="24" height="24">
+          <img src="$page.properties.("assets.hostname")$$page.base$$page.properties.("material.logo")$" width="24" height="24">
         $endif$
       $endif$
     </a>
