@@ -46,7 +46,7 @@ $!
     $ elseif (page.properties.("material.author")) $
       <meta name="author" content="$page.properties.("site.author")$">
     $ endif $
-    <link rel="shortcut icon" href="$page.base$$page.properties.("material.favicon")$">
+    <link rel="shortcut icon" href="$page.properties.("assets.hostname")$$page.base$$page.properties.("material.favicon")$">
     $ if (page.properties.("title")) $
       <title>$page.properties.("title")$</title>
     $ elseif (page.title) $
