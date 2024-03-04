@@ -41,8 +41,8 @@ addSbtPlugin("org.apache.pekko" % "sbt-paradox-pekko" % "<version>")
 > * sbt-paradox-apidoc
 > * sbt-paradox-project-info
 > you need to use an `excludesAll` statement on `addSbtPlugin` to remove the
-> JDK 11 reference, i.e. if you need to use sbt-site-paradox you would do the
-> following
+> resolved dependencies that rely on JDK 11+, i.e. if you need to use
+> sbt-site-paradox you would do the following
 > ```sbt
 > addSbtPlugin(("com.github.sbt" % "sbt-site-paradox" % "1.5.0").excludeAll(
 > "com.lightbend.paradox", "sbt-paradox"))
