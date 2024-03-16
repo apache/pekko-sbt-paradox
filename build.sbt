@@ -25,7 +25,7 @@ ThisBuild / crossScalaVersions := Seq(scala212)
 ThisBuild / apacheSonatypeProjectProfile := "pekko"
 ThisBuild / dynverSonatypeSnapshots := true
 sourceDistName := "apache-pekko-sbt-paradox"
-sourceDistIncubating := true
+sourceDistIncubating := false
 
 commands := commands.value.filterNot { command =>
   command.nameOption.exists { name =>
@@ -43,8 +43,7 @@ lazy val publishSettings = Seq(
       "pekko-sbt-paradox-contributors",
       "Apache Pekko Sbt Paradox Contributors",
       "dev@pekko.apache.org",
-      url("https://github.com/apache/incubator-pekko-sbt-paradox/graphs/contributors"))),
-  apacheSonatypeDisclaimerFile := Some((LocalRootProject / baseDirectory).value / "DISCLAIMER"))
+      url("https://github.com/apache/pekko-sbt-paradox/graphs/contributors"))))
 
 lazy val pekkoParadox = project
   .in(file("."))

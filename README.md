@@ -29,7 +29,7 @@ umbrella of projects, and not as a public theme to use on "any" project.
 ### JDK 1.8 (only)
 
 The project intentionally supports JDK 1.8 by default since its built against
-[sbt-paradox/sbt-paradox-theme 0.9.2](https://github.com/apache/incubator-pekko-sbt-paradox/blob/main/project/plugins.sbt#L20-L21)
+[sbt-paradox/sbt-paradox-theme 0.9.2](https://github.com/apache/pekko-sbt-paradox/blob/main/project/plugins.sbt#L20-L21)
 so you can just include it like this
 
 ```sbt
@@ -91,7 +91,7 @@ Press enter to continue.
 
 ### Running the Build
 - Open a command window and change directory to your preferred base directory
-- Use git to clone the [repo](https://github.com/apache/incubator-pekko-sbt-paradox) or download a source release from https://pekko.apache.org (and unzip or untar it, as appropriate)
+- Use git to clone the [repo](https://github.com/apache/pekko-sbt-paradox) or download a source release from https://pekko.apache.org (and unzip or untar it, as appropriate)
 - Change directory to the directory where you installed the source (you should have a file called `build.sbt` in this directory)
 - `sbt compile` compiles the main source for project default version of Scala (2.13)
 - `sbt test` will compile the code and run the unit tests
@@ -111,7 +111,7 @@ Press enter to continue.
 
 There are several ways to interact with the Pekko community:
 
-- [GitHub discussions](https://github.com/apache/incubator-pekko/discussions): for questions and general discussion.
+- [GitHub discussions](https://github.com/apache/pekko/discussions): for questions and general discussion.
 - [Pekko dev mailing list](https://lists.apache.org/list.html?dev@pekko.apache.org): for Pekko development discussions.
 - [Pekko users mailing list](https://lists.apache.org/list.html?users@pekko.apache.org): for Pekko user discussions.
-- [GitHub issues](https://github.com/apache/incubator-pekko-sbt-paradox/issues): for bug reports and feature requests. Please search the existing issues before creating new ones. If you are unsure whether you have found a bug, consider asking in GitHub discussions or the mailing list first.
+- [GitHub issues](https://github.com/apache/pekko-sbt-paradox/issues): for bug reports and feature requests. Please search the existing issues before creating new ones. If you are unsure whether you have found a bug, consider asking in GitHub discussions or the mailing list first.
