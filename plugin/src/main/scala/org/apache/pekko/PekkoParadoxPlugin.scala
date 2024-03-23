@@ -60,7 +60,7 @@ object PekkoParadoxPlugin extends AutoPlugin {
       """Copyright © 2011-2022 <a href="https://www.lightbend.com/">Lightbend, Inc</a>.
         | Apache Pekko, Pekko, and its feather logo are trademarks of The Apache Software Foundation.""".stripMargin,
     pekkoParadoxGithub in Global := None,
-    pekkoParadoxIncubatorNotice in Global := Some(incubatorNoticeText),
+    pekkoParadoxIncubatorNotice in Global := None,
     Compile / paradoxMaterialTheme := {
       val theme =
         (Compile / paradoxMaterialTheme).value
