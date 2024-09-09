@@ -105,7 +105,7 @@ ThisBuild / githubWorkflowPublish := Seq(
       "NEXUS_USER" -> "${{ secrets.NEXUS_USER }}",
       "NEXUS_PW" -> "${{ secrets.NEXUS_PW }}")))
 
-ThisBuild / githubWorkflowOSes := Seq("ubuntu-latest", "macos-latest", "windows-latest")
+ThisBuild / githubWorkflowOSes := Seq("ubuntu-latest", "windows-latest")
 
 ThisBuild / githubWorkflowJavaVersions := Seq(
   JavaSpec.temurin("8"))
