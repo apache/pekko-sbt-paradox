@@ -56,11 +56,11 @@ object PekkoParadoxPlugin extends AutoPlugin {
         Map.empty)
     },
     paradoxNavigationIncludeHeaders := true,
-    pekkoParadoxCopyright in Global :=
+    Global / pekkoParadoxCopyright :=
       """Copyright © 2011-2022 <a href="https://www.lightbend.com/">Lightbend, Inc</a>.
         | Apache Pekko, Pekko, and its feather logo are trademarks of The Apache Software Foundation.""".stripMargin,
-    pekkoParadoxGithub in Global := None,
-    pekkoParadoxIncubatorNotice in Global := None,
+    Global / pekkoParadoxGithub := None,
+    Global / pekkoParadoxIncubatorNotice := None,
     Compile / paradoxMaterialTheme := {
       val theme =
         (Compile / paradoxMaterialTheme).value
