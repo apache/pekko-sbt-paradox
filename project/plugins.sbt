@@ -17,12 +17,12 @@
 
 // When updating the sbt-paradox version,
 // remember to also update build.sbt
-addSbtPlugin(("com.lightbend.paradox" % "sbt-paradox-theme" % "0.9.2").exclude("com.typesafe.sbt", "sbt-web"))
-addSbtPlugin(("com.lightbend.paradox" % "sbt-paradox" % "0.9.2").exclude("com.typesafe.sbt", "sbt-web"))
-addSbtPlugin("com.github.sbt" % "sbt-web" % "1.5.5") // sbt-paradox[-theme] 0.9.2 depends on old sbt-web 1.4.x, but we want a newer version
+addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-theme" % "0.10.7")
+addSbtPlugin("com.lightbend.paradox" % "sbt-paradox" % "0.10.7")
+addSbtPlugin("com.github.sbt" % "sbt-web" % "1.5.8")
 addSbtPlugin("com.github.sbt" % "sbt-dynver" % "5.1.1")
 addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.5.5")
 addSbtPlugin("org.mdedetrich" % "sbt-apache-sonatype" % "0.1.12")
 addSbtPlugin("com.github.pjfanning" % "sbt-source-dist" % "0.1.12")
 addSbtPlugin("net.bzzt" % "sbt-reproducible-builds" % "0.32")
-addSbtPlugin("com.github.sbt" % "sbt-github-actions" % "0.25.0")
+addSbtPlugin("com.github.sbt" % "sbt-github-actions" % "0.28.0")
