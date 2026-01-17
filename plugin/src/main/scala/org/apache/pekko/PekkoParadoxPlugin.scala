@@ -62,13 +62,12 @@ object PekkoParadoxPlugin extends AutoPlugin {
     Global / pekkoParadoxGithub := None,
     Global / pekkoParadoxIncubatorNotice := None,
     Compile / paradoxMaterialTheme := {
-      val theme =
-        (Compile / paradoxMaterialTheme).value
-          .withLogo("assets/images/pekko_logo.png")
-          .withFavicon("assets/images/pekko_favicon.png")
-          .withCustomStylesheet("assets/stylesheets/pekko-theme.css")
-          .withColor("white", "orange")
-          .withCopyright(pekkoParadoxCopyright.value)
+      val theme = (Compile / paradoxMaterialTheme).value
+        .withLogo("assets/images/pekko_logo.png")
+        .withFavicon("assets/images/pekko_favicon.png")
+        .withCustomStylesheet("assets/stylesheets/pekko-theme.css")
+        .withColor("white", "orange")
+        .withCopyright(pekkoParadoxCopyright.value)
 
       pekkoParadoxGithub.value match {
         case Some(githubUrl) => theme.withRepository(uri(githubUrl))
