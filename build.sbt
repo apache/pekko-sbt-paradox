@@ -17,7 +17,7 @@
 
 import net.bzzt.reproduciblebuilds.ReproducibleBuildsPlugin.reproducibleBuildsCheckResolver
 
-val scala212 = "2.12.20"
+val scala212 = "2.12.21"
 
 ThisBuild / scalaVersion := scala212
 ThisBuild / crossScalaVersions := Seq(scala212)
