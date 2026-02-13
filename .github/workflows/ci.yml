@@ -34,7 +34,7 @@ jobs:
 
       - name: Configure pagefile for Windows
         if: contains(runner.os, 'windows')
-        uses: al-cheb/configure-pagefile-action@v1.5
+        uses: al-cheb/configure-pagefile-action@9b6da52fb72a3c6147c1aad2df22d8d905681adc # v1.5
         with:
           minimum-size: 2GB
           maximum-size: 8GB
@@ -54,7 +54,7 @@ jobs:
           cache: sbt
 
       - name: Setup sbt
-        uses: sbt/setup-sbt@v1
+        uses: sbt/setup-sbt@ae54f7cfe46ec0d24ade661d77f007360ab48bda # v1.1.16
 
       - name: Check that workflows are up to date
         shell: bash
@@ -90,7 +90,7 @@ jobs:
 
       - name: Configure pagefile for Windows
         if: contains(runner.os, 'windows')
-        uses: al-cheb/configure-pagefile-action@v1.5
+        uses: al-cheb/configure-pagefile-action@9b6da52fb72a3c6147c1aad2df22d8d905681adc # v1.5
         with:
           minimum-size: 2GB
           maximum-size: 8GB
@@ -110,7 +110,7 @@ jobs:
           cache: sbt
 
       - name: Setup sbt
-        uses: sbt/setup-sbt@v1
+        uses: sbt/setup-sbt@ae54f7cfe46ec0d24ade661d77f007360ab48bda # v1.1.16
 
       - name: Download target directories (2.12.21)
         uses: actions/download-artifact@v6

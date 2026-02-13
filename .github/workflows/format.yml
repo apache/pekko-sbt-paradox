@@ -18,6 +18,6 @@ jobs:
           persist-credentials: false
 
       - name: Check project is formatted
-        uses: jrouly/scalafmt-native-action@v3
+        uses: jrouly/scalafmt-native-action@77bfce85328ffa48c97174acbb9458246e2390cc # v3
         with:
           arguments: '--list --mode diff-ref=origin/main'
