@@ -86,6 +86,9 @@ lazy val pekkoPlugin = project
       Seq(file)
     }).settings(publishSettings)
 
+// Disable sbt-github-actions due to broken builds
+// ASF policies on action versions is too strict for this plugin to work
+/*
 ThisBuild / githubWorkflowBuild := Seq(WorkflowStep.Sbt(List("test", "scripted")))
 
 ThisBuild / githubWorkflowTargetTags ++= Seq("v*")
@@ -104,6 +107,7 @@ ThisBuild / githubWorkflowOSes := Seq("ubuntu-latest", "windows-latest")
 
 ThisBuild / githubWorkflowJavaVersions := Seq(
   JavaSpec.temurin("8"))
+*/
 
 ThisBuild / scalacOptions ++= List(
   "-unchecked",
