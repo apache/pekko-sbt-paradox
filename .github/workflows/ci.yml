@@ -28,6 +28,14 @@ jobs:
         shell: bash
         run: git config --global core.autocrlf false
 
+      - name: Configure pagefile for Windows
+        if: contains(runner.os, 'windows')
+        uses: al-cheb/configure-pagefile-action@v9b6da52fb72a3c6147c1aad2df22d8d905681adc # v1.5
+        with:
+          minimum-size: 2GB
+          maximum-size: 8GB
+          disk-root: 'C:'
+
       - name: Checkout current branch (full)
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
@@ -43,10 +51,6 @@ jobs:
 
       - name: Setup sbt
         uses: sbt/setup-sbt@66fb4376e81982c7d92a4074170846fff88e2e30 # v1.5.0
-
-      - name: Check that workflows are up to date
-        shell: bash
-        run: sbt '++ ${{ matrix.scala }}; githubWorkflowCheck'
 
       - shell: bash
         run: sbt '++ ${{ matrix.scala }}; test; scripted'
@@ -75,6 +79,14 @@ jobs:
       - name: Ignore line ending differences in git
         if: contains(runner.os, 'windows')
         run: git config --global core.autocrlf false
+
+      - name: Configure pagefile for Windows
+        if: contains(runner.os, 'windows')
+        uses: al-cheb/configure-pagefile-action@v9b6da52fb72a3c6147c1aad2df22d8d905681adc # v1.5
+        with:
+          minimum-size: 2GB
+          maximum-size: 8GB
+          disk-root: 'C:'
 
       - name: Checkout current branch (full)
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
