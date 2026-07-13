@@ -18,9 +18,17 @@
 import net.bzzt.reproduciblebuilds.ReproducibleBuildsPlugin.reproducibleBuildsCheckResolver
 
 val scala212 = "2.12.21"
+val scala3 = "3.8.4"
 
 ThisBuild / scalaVersion := scala212
-ThisBuild / crossScalaVersions := Seq(scala212)
+ThisBuild / crossScalaVersions := Seq(scala212, scala3)
+
+(pluginCrossBuild / sbtVersion) := {
+  scalaBinaryVersion.value match {
+    case "2.12" => "1.12.13"
+    case _      => "2.0.1"
+  }
+}
 
 ThisBuild / apacheSonatypeProjectProfile := "pekko"
 ThisBuild / dynverSonatypeSnapshots := true
@@ -80,6 +88,7 @@ lazy val pekkoPlugin = project
     addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-apidoc" % "1.1.0"),
     addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-project-info" % "3.0.1"),
     addSbtPlugin("com.github.sbt" % "sbt-paradox-material-theme" % "0.7.0"),
+    addSbtPlugin("com.github.sbt" % "sbt2-compat" % "0.1.0"),
     Compile / resourceGenerators += Def.task {
       val file = (Compile / resourceManaged).value / "pekko-paradox.properties"
       IO.write(file, s"pekko.paradox.version=${version.value}")
