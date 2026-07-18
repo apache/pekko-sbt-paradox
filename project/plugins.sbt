@@ -26,7 +26,6 @@ addSbtPlugin("org.mdedetrich" % "sbt-apache-sonatype" % "0.1.12")
 addSbtPlugin("com.github.pjfanning" % "sbt-source-dist" % "0.1.13")
 addSbtPlugin("net.bzzt" % "sbt-reproducible-builds" % "0.35")
 addSbtPlugin("com.github.sbt" % "sbt-github-actions" % "0.31.0")
-addSbtPlugin("com.github.sbt" % "sbt-github-actions" % "0.31.0")
 
 // https://eed3si9n.com/reducing-scaladoc-file-size-with-sbt-salad-days/
 addSbtPlugin("com.eed3si9n" % "sbt-salad-days" % "0.2.0")
