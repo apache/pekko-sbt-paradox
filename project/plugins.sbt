@@ -18,8 +18,8 @@
 // When updating the sbt-paradox version,
 // remember to also update build.sbt
 addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-theme" % "0.10.7")
-addSbtPlugin("com.lightbend.paradox" % "sbt-paradox" % "0.10.7")
-addSbtPlugin("com.github.sbt" % "sbt-web" % "1.5.8")
+addSbtPlugin("com.lightbend.paradox" % "sbt-paradox" % "0.11.0-M4")
+addSbtPlugin("com.github.sbt" % "sbt-web" % "1.6.0-M4")
 addSbtPlugin("com.github.sbt" % "sbt-dynver" % "5.1.1")
 addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.6.2")
 addSbtPlugin("org.mdedetrich" % "sbt-apache-sonatype" % "0.1.12")
