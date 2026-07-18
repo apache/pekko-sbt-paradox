@@ -103,7 +103,7 @@ ThisBuild / githubWorkflowPublish := Seq(
 ThisBuild / githubWorkflowOSes := Seq("ubuntu-latest", "windows-latest")
 
 ThisBuild / githubWorkflowJavaVersions := Seq(
-  JavaSpec.temurin("8"))
+  JavaSpec.temurin("17"))
 
 ThisBuild / scalacOptions ++= List(
   "-unchecked",
