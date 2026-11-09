@@ -41,6 +41,13 @@ class UniqueHeaderAnchorsSpec extends munit.FunSuite {
       h3("bug-fixes") + h3("bug-fixes-1") + h3("bug-fixes-2"))
   }
 
+  test("number many duplicates in linear time") {
+    val n = 20000
+    val html = h3("bug-fixes") * n
+    val expected = h3("bug-fixes") + (1 until n).map(i => h3(s"bug-fixes-$i")).mkString
+    assertEquals(UniqueHeaderAnchors.rewrite(html), expected)
+  }
+
   test("leave other links to a duplicated anchor alone") {
     val link = """<a href="#bug-fixes">see bug fixes</a>"""
     val html = link + h3("bug-fixes") + h3("bug-fixes")

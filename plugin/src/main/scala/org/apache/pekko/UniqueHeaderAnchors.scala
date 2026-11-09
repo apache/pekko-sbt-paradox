@@ -42,14 +42,23 @@ private[pekko] object UniqueHeaderAnchors {
     if (names.distinct.size == names.size) html
     else {
       val used = mutable.Set(names: _*)
-      val seen = mutable.Set.empty[String]
+      // last suffix tried per name, so the k-th duplicate doesn't re-check -1 .. -(k-1)
+      val lastSuffix = mutable.Map.empty[String, Int]
       HeaderAnchor.replaceAllIn(html,
         m => {
           val name = m.group(1)
-          val unique =
-            if (seen.add(name)) name
-            else Iterator.from(1).map(i => s"$name-$i").find(n => !used(n)).get
-          used += unique
+          val unique = lastSuffix.get(name) match {
+            case None =>
+              lastSuffix(name) = 0
+              name
+            case Some(last) =>
+              var i = last + 1
+              while (used(s"$name-$i")) i += 1
+              lastSuffix(name) = i
+              val n = s"$name-$i"
+              used += n
+              n
+          }
           Regex.quoteReplacement(s"""<a href="#$unique" name="$unique" class="anchor">""")
         })
     }
