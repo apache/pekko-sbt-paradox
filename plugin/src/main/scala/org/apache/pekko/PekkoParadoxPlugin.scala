@@ -32,6 +32,8 @@ object PekkoParadoxPlugin extends AutoPlugin {
     lazy val pekkoParadoxCopyright = settingKey[String]("Copyright text to use in docs footer")
     lazy val pekkoParadoxGithub = settingKey[Option[String]]("Link to Github repository")
     lazy val pekkoParadoxIncubatorNotice = settingKey[Option[String]]("Whether to include the ASF incubator notice")
+    lazy val pekkoParadoxUniqueHeaderAnchors = settingKey[Boolean](
+      "Whether to give repeated headings on a page unique anchors (`<anchor>-1`, `<anchor>-2`, ...). Defaults to true")
   }
   import autoImport._
 
@@ -61,6 +63,7 @@ object PekkoParadoxPlugin extends AutoPlugin {
         | Apache Pekko, Pekko, Apache, the Apache logo, and the Apache Pekko project logo are trademarks of The Apache Software Foundation""".stripMargin,
     Global / pekkoParadoxGithub := None,
     Global / pekkoParadoxIncubatorNotice := None,
+    Global / pekkoParadoxUniqueHeaderAnchors := true,
     Compile / paradoxMaterialTheme := {
       val theme = (Compile / paradoxMaterialTheme).value
         .withLogo("assets/images/pekko_logo.png")
@@ -81,5 +84,11 @@ object PekkoParadoxPlugin extends AutoPlugin {
     // we override some files from paradox-material-theme, so we must solve the ambiguity where to take those duplicates from
     paradoxTheme / WebKeys.deduplicators += { (files: Seq[File]) =>
       files.find(_.getPath.contains("pekko-theme-paradox"))
+    },
+    // rewrite the generated HTML in place; the material theme builds its search index from these files afterwards
+    paradoxMarkdownToHtml := {
+      val files = paradoxMarkdownToHtml.value
+      if (pekkoParadoxUniqueHeaderAnchors.value) UniqueHeaderAnchors.rewriteFiles(files.map(_._1))
+      files
     }))
 }
