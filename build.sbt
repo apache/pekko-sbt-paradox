@@ -72,6 +72,7 @@ lazy val pekkoPlugin = project
       Seq("-Xmx1024M", "-Dplugin.version=" + version.value)
     },
     scriptedBufferLog := false,
+    libraryDependencies += "org.scalameta" %% "munit" % "1.1.1" % Test,
     addSbtPlugin(
       // When updating the sbt-paradox version,
       // remember to also update project/plugins.sbt
