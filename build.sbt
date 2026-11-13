@@ -79,6 +79,7 @@ lazy val pekkoPlugin = project
     addSbtPlugin("com.github.sbt" % "sbt-web" % "1.5.8"),
     addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-apidoc" % "1.1.0"),
     addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-project-info" % "3.0.1"),
+    addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-dependencies" % "0.2.4"),
     addSbtPlugin("com.github.sbt" % "sbt-paradox-material-theme" % "0.8.0"),
     Compile / resourceGenerators += Def.task {
       val file = (Compile / resourceManaged).value / "pekko-paradox.properties"

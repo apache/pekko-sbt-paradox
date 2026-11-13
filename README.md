@@ -40,6 +40,7 @@ addSbtPlugin("org.apache.pekko" % "sbt-paradox-pekko" % "<version>")
 > * sbt-web
 > * sbt-paradox-apidoc
 > * sbt-paradox-project-info
+> * sbt-paradox-dependencies
 > you need to use an `excludesAll` statement on `addSbtPlugin` to remove the
 > resolved dependencies that rely on JDK 11+, i.e. if you need to use
 > sbt-site-paradox you would do the following
