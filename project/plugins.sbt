@@ -26,3 +26,5 @@ addSbtPlugin("org.mdedetrich" % "sbt-apache-sonatype" % "0.1.12")
 addSbtPlugin("com.github.pjfanning" % "sbt-source-dist" % "0.2.0")
 addSbtPlugin("net.bzzt" % "sbt-reproducible-builds" % "0.35")
 addSbtPlugin("com.github.sbt" % "sbt-github-actions" % "0.32.2")
+
+addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.14.10")

@@ -17,12 +17,13 @@
 
 package org.apache.pekko
 
-import com.lightbend.paradox.sbt.ParadoxPlugin
-import com.typesafe.sbt.web.Import.{ Assets, WebKeys }
 import com.github.sbt.paradox.material.theme.ParadoxMaterialThemePlugin
 import com.github.sbt.paradox.material.theme.ParadoxMaterialThemePlugin.autoImport._
-import sbt._
+import com.lightbend.paradox.sbt.ParadoxPlugin
 import sbt.Keys._
+import sbt._
+
+import com.typesafe.sbt.web.Import.{ Assets, WebKeys }
 
 object PekkoParadoxPlugin extends AutoPlugin {
 

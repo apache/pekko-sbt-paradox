@@ -138,3 +138,7 @@ ThisBuild / scalacOptions ++= {
       "-opt:l:inline")
   } else List.empty
 }
+
+addCommandAlias(
+  "sortImports",
+  """;scalafixEnable;scalafixAll OrganizeImports;scalafmtAll""")
