@@ -58,8 +58,9 @@ object PekkoParadoxPlugin extends AutoPlugin {
     },
     paradoxNavigationIncludeHeaders := true,
     Global / pekkoParadoxCopyright :=
-      """Copyright © 2011-2022 <a href="https://www.lightbend.com/">Lightbend, Inc</a>.
-        | Apache Pekko, Pekko, Apache, the Apache logo, and the Apache Pekko project logo are trademarks of The Apache Software Foundation""".stripMargin,
+      """Copyright © 2011-2023 <a href="https://www.lightbend.com/">Lightbend, Inc</a>.
+        | Apache Pekko, Pekko, Apache, the Apache logo, and the Apache Pekko project logo are either registered trademarks
+        | or trademarks of The Apache Software Foundation in the United States and other countries.""".stripMargin,
     Global / pekkoParadoxGithub := None,
     Global / pekkoParadoxIncubatorNotice := None,
     Compile / paradoxMaterialTheme := {
