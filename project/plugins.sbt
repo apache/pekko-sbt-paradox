@@ -20,7 +20,7 @@
 addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-theme" % "0.11.1")
 addSbtPlugin("com.lightbend.paradox" % "sbt-paradox" % "0.11.1")
 addSbtPlugin("com.github.sbt" % "sbt-web" % "1.5.8")
-addSbtPlugin("com.github.sbt" % "sbt-dynver" % "5.1.1")
+addSbtPlugin("com.github.sbt" % "sbt-dynver" % "5.2.0")
 addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.6.2")
 addSbtPlugin("org.mdedetrich" % "sbt-apache-sonatype" % "0.1.12")
 addSbtPlugin("com.github.pjfanning" % "sbt-source-dist" % "0.2.0")
