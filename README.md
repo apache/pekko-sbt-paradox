@@ -26,38 +26,12 @@ umbrella of projects, and not as a public theme to use on "any" project.
 
 ## Usage
 
-### JDK 1.8 (only)
-
-The project intentionally supports JDK 1.8 by default since its built against
-[sbt-paradox/sbt-paradox-theme 0.9.2](https://github.com/apache/pekko-sbt-paradox/blob/main/project/plugins.sbt#L20-L21)
-so you can just include it like this
+This plugin requires JDK 17 or later. It is built against
+[sbt-paradox 0.11.x](https://github.com/apache/pekko-sbt-paradox/blob/main/project/plugins.sbt),
+which is pulled in automatically, so you can just include it like this
 
 ```sbt
 addSbtPlugin("org.apache.pekko" % "sbt-paradox-pekko" % "<version>")
-```
-
-> **_NOTE:_** If you happen to be using sbt-paradox plugins aside from
-> * sbt-web
-> * sbt-paradox-apidoc
-> * sbt-paradox-project-info
-> * sbt-paradox-dependencies
-> you need to use an `excludesAll` statement on `addSbtPlugin` to remove the
-> resolved dependencies that rely on JDK 11+, i.e. if you need to use
-> sbt-site-paradox you would do the following
-> ```sbt
-> addSbtPlugin(("com.github.sbt" % "sbt-site-paradox" % "1.5.0").excludeAll(
-> "com.lightbend.paradox", "sbt-paradox"))
-> ```
-
-### JDK 11+
-
-With JDK 11 or later you need to explicitly override the sbt-paradox/sbt-paradox-theme
-versions to use the 10.6.x (or newer) series, i.e.
-
-```sbt
-addSbtPlugin("org.apache.pekko" % "sbt-paradox-pekko" % "<version>")
-addSbtPlugin("com.lightbend.paradox" % "sbt-paradox" % "0.10.6")
-addSbtPlugin("com.lightbend.paradox" % "sbt-paradox-theme" % "0.10.6")
 ```
 
 Enable it instead of the upstream ParadoxPlugin:
@@ -87,14 +61,14 @@ Press enter to continue.
 ## Building from Source
 
 ### Prerequisites
-- Make sure you have installed a Java Development Kit (JDK) version 8.
+- Make sure you have installed a Java Development Kit (JDK) version 17 or later.
 - Make sure you have [sbt](https://www.scala-sbt.org/) installed and using this JDK.
 
 ### Running the Build
 - Open a command window and change directory to your preferred base directory
 - Use git to clone the [repo](https://github.com/apache/pekko-sbt-paradox) or download a source release from https://pekko.apache.org (and unzip or untar it, as appropriate)
 - Change directory to the directory where you installed the source (you should have a file called `build.sbt` in this directory)
-- `sbt compile` compiles the main source for project default version of Scala (2.13)
+- `sbt compile` compiles the main source for project default version of Scala (2.12)
 - `sbt test` will compile the code and run the unit tests
 - `sbt package` will build the jars
     - the jars will built into target dirs of the various modules
