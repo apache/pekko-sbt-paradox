@@ -49,10 +49,11 @@ jobs:
     steps:
       - name: Check version parameter
         run: |-
-          if [[ "$REF" != "v"* ]]; then
-            echo "Trigger this workflow on a version tag"
-            exit 1
-          fi
+          # To be enabled after this workflow has been tested:
+          #if [[ "$REF" != "v"* ]]; then
+          #  echo "Trigger this workflow on a version tag"
+          #  exit 1
+          #fi
           if [[ "$REF" != *"-RC"* ]]; then
             echo "Trigger this workflow on an RC tag"
             exit 1
@@ -123,10 +124,11 @@ jobs:
     steps:
       - name: Check version parameter
         run: |-
-          if [[ "$REF" != "v"* ]]; then
-            echo "Trigger this workflow on a version tag"
-            exit 1
-          fi
+          # To be enabled after this workflow has been tested:
+          #if [[ "$REF" != "v"* ]]; then
+          #  echo "Trigger this workflow on a version tag"
+          #  exit 1
+          #fi
           if [[ "$REF" != *"-RC"* ]]; then
             echo "Trigger this workflow on an RC tag"
             exit 1
@@ -180,10 +182,11 @@ jobs:
     steps:
       - name: Check version parameter
         run: |-
-          if [[ "$REF" != "v"* ]]; then
-            echo "Trigger this workflow on a version tag"
-            exit 1
-          fi
+          # To be enabled after this workflow has been tested:
+          #if [[ "$REF" != "v"* ]]; then
+          #  echo "Trigger this workflow on a version tag"
+          #  exit 1
+          #fi
           if [[ "$REF" != *"-RC"* ]]; then
             echo "Trigger this workflow on an RC tag"
             exit 1
